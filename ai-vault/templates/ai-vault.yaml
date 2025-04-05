@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-vault
+  namespace: {{ .Values.service.namespace }}
+  labels:
+    app: ai-vault
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-vault
+  template:
+    metadata:
+      labels:
+        app: ai-vault
+    spec:
+      containers:
+        - name: ai-vault-saas
+          imagePullPolicy: {{ .Values.aivaultEntityImage.pullPolicy }}
+          image: {{ .Values.aivaultEntityImage.repository }}
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+          - name: PYTHONPATH
+            value: "/ai-vault/"
+          - name: HTML_PAGE_AWS_S3_BUCKET
+            value: {{ .Values.htmlPageAwsS3Bucket }}
+          - name: HTML_PAGE_CON
+            value: {{ .Values.htmlPageCDN }}
+          - name: GPC_BASE_URL
+            value:  {{ .Values.env.gpcBaseUrl }}
+          - name: GPT_DATA_DB_USER
+            value: {{ .Values.env.gptDataDbUser }}
+          - name: GPT_DATA_DB_HOST
+            value: {{ .Values.env.gptDataDbHost }}
+          - name: GPT_DATA_DB_NAME
+            value: {{ .Values.env.gptDataDbName }}
+          - name: GPC_STREAM_URL
+            value:  {{ .Values.env.gpcStreamUrl }}
+          - name: NLP_API_URL
+            value: {{ .Values.env.nlpApiUrl }}
+          - name: MAIL_FROM
+            value: {{ .Values.env.mailFrom }}
+          - name: MAILSERVER
+            value: {{ .Values.env.mailServer }}
+          - name: MAILSERVER_PORT
+            value: {{ .Values.env.mailServerPort }}
+          - name: SMTP_LOGIN_ID
+            value: {{ .Values.env.smtpLoginId }}
+          - name: AI_VAULT_LOGIN
+            value: {{ .Values.env.aiVaultLogin }}
+          - name: AI_SEEK_ENTERPRISE_SERVICE
+            value: {{ .Values.env.aiSeekEnterPriseService }}
+          - name: GPT_DATA_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: gpt-data-db
+                key: password
+                optional: false
+          - name: ENCRYPTION_KEY
+            valueFrom:
+              secretKeyRef:
+                name: encryption-key
+                key: key
+                optional: false
+          - name: SMTP_LOGIN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: support-smtp-login
+                key: password
+                optional: false

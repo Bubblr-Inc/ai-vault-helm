@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-vault-entity
+  namespace: {{ .Values.service.namespace }}
+  labels:
+    app: ai-vault-entity
+spec:
+  replicas: {{ .Values.aivaultEntityReplicaCount }}
+  selector:
+    matchLabels:
+      app: ai-vault-entity
+  template:
+    metadata:
+      labels:
+        app: ai-vault-entity
+    spec:
+      containers:
+        - name: ai-vault-entity
+          image: {{ .Values.aivaulEntityIimage.repository }}
+          imagePullPolicy: {{ .Values.aivaulEntityIimage.pullPolicy }}
+          resources:
+          requests:
+              memory: "3184Mi"
+              cpu: "500m"
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          env:
+          - name: AWS_S3_BUCKET_HTML
+            value: {{ .Values.env.awsS3BucketHtml }}
+          - name: AWS_S3_BUCKET_HTML_CDN
+            value: {{ .Values.env.awsS3BucketHtmlCDN }}
