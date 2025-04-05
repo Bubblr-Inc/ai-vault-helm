@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: ai-vault-entity
-          image: {{ .Values.aivaulEntityIimage.repository }}
-          imagePullPolicy: {{ .Values.aivaulEntityIimage.pullPolicy }}
+          image: {{ .Values.aivaultEntityImage.repository }}
+          imagePullPolicy: {{ .Values.aivaultEntityImage.pullPolicy }}
           resources:
           requests:
               memory: "3184Mi"
