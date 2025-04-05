@@ -6,6 +6,7 @@ This chart is used to install the AI vault and AI Vault Entity Extraction Deploy
 TODO
 
 ## Adding a Load Balancer Ingress
+TODO
 
 ## Testing Rendered Templates
 
