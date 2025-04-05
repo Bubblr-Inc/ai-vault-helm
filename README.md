@@ -5,6 +5,8 @@ This chart is used to install the AI vault and AI Vault Entity Extraction Deploy
 ## Installation
 TODO
 
+## Adding a Load Balancer Ingress
+
 ## Testing Rendered Templates
 
 To view and test the output of your templates without installing it to your Kubernetes cluster run the following instructions:
