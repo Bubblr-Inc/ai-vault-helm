@@ -80,9 +80,9 @@ Replace the version with the package created in the Create helm package step
 helm push ai-vault-helm-<VERSION>.tgz oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/
 ```
 
-4. Verfiy the helm chart 
+4. Verfiy the helm chart has been pushed correctly
 ```
 aws ecr describe-images \
      --repository-name ai-vault-helm \
      --region eu-west-2
-     ```
+```
