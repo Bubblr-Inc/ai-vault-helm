@@ -6,7 +6,7 @@ This chart is used to install the AI vault and AI Vault Entity Extraction Deploy
 
 1. Prepare a values file for your installation.  
 Create a file names `customValues.yaml` containing the following values. Note, you will modify the environment variables to suit your environment.
-_NOTE_ You will likely need an ALB Load Balancer to expoise your Vault Endpoint see the _Adding a Load Balancer via Ingress_ section for details
+_NOTE_ You will likely need an ALB Load Balancer to expose your Vault Endpoint see the _Adding a Load Balancer via Ingress_ section for details
 
 ```
 namespace: ai-vault-ns
