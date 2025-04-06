@@ -31,9 +31,9 @@ aws ecr get-login-password \
 ```
 
 ### Install the Helm Chart with your newly created values file.
-Install the chart to your kubernetes cluster. 
+Install the chart to your kubernetes cluster. This example will install to the namespace ai-vault-ns
 ```
-helm install ai-vault-helm oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-helm --version 0.1.0 --values ./customValues.yaml --create-namespace
+helm install --create-namespace -n ai-vault-ns ai-vault-helm oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-helm --version 0.1.0 --values ./customValues.yaml
 ```
 
 ## Adding a Load Balancer via Ingress
@@ -71,6 +71,11 @@ ingress:
               name: ai-vault-svc
               port:
                 number: 80
+```
+
+### Uninstall Helm Chart
+```
+helm uninstall ai-vault-helm -n ai-vault-ns
 ```
 ## Development
 ### Testing Rendered Templates
