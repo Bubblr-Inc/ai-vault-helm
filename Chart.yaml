@@ -1,5 +1,5 @@
 apiVersion: v2
-name: ai-vault
+name: ai-vault-helm
 description: A Helm chart for Ai-Vault
 type: application
 version: 0.1.0
