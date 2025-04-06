@@ -26,13 +26,13 @@ Authenticate your Helm client to the Amazon ECR registry holding the AI Vault He
 aws ecr get-login-password \
      --region eus-west-2 | helm registry login \
      --username AWS \
-     --password-stdin <accountID>.dkr.ecr.eu-west-2.amazonaws.com
+     --password-stdin 475755457693.dkr.ecr.eu-west-2.amazonaws.com
 ```
 
 ### Install the Helm Chart with your newly created values file.
 Install the chart to your kubernetes cluster. 
 ```
-helm install ai-vault-helm oci://aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-helm --version 0.1.0 --values ./customValues.yaml
+helm install ai-vault-helm oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-helm --version 0.1.0 --values ./customValues.yaml
 ```
 
 ## Adding a Load Balancer via Ingress
