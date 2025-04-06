@@ -15,7 +15,7 @@ The following example describes setting an ingress for an AWS ALB LoadBalancer.
 
 4. Make a note of your public subnets ids. 
 
-5. Add an ingress section like the example below, replace the public subnets and certificate ARN with your own values estblished from the previous steps.
+5. Add an ingress section like the example below, replace the public subnets and certificate ARN with your own values estblished from the previous steps.  The line  `alb.ingress.kubernetes.io/subnets` needs a comma seperated list of subnets representing your environment and the line `alb.ingress.kubernetes.io/certificate-arn` needs the ARN of your ACM certificate. The ACM certificates should be in the same AWS region as your EKS cluster you are deploying the helm chart to.
 
 ```
 ingress:
@@ -56,12 +56,33 @@ To view and test the output of your templates without installing it to your Kube
    ```
 3. Run the helm debug command
 ```
-helm template ai-vault-chart .
+helm template ai-vault-helm .
 ```
 
 
 ### Packaging and Pushing Helm Chart
-1. Authenticate
+1. Create helm package package
+-  From the directory above the repo create 
+```
+helm package ai-vault-helm
+```
+Make a note of the outputted package something like ai-vault-helm-0.1.0.tgz
+2. Authenticate to AWS ECR
+
    ```
 aws ecr get-login-password --region eu-west-2 |  helm registry login --username AWS --password-stdin 475755457693.dkr.ecr.eu-west-2.amazonaws.com
    ```
+
+3. Push to AWS ECR HELM
+Replace the version with the package created in the Create helm package step
+
+```
+helm push ai-vault-helm-<VERSION>.tgz oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/
+```
+
+4. Verfiy the helm chart 
+```
+aws ecr describe-images \
+     --repository-name ai-vault-helm \
+     --region eu-west-2
+     ```

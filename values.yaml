@@ -31,7 +31,7 @@ env:
   gptDataDbUser: ""
 
 ingress:
-  enabled: fatruelse
+  enabled: true
   className: "alb"
   annotations: 
     kubernetes.io/ingress.class: alb
