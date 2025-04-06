@@ -1,6 +1,27 @@
 # AI Vault Helm Chart.
 ## Summary
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
+
+## Installation
+
+1. Prepare a values file for your installation.  
+Create a file names `customValues.yaml` containing the following values. Note, you will modify the environment variables to suit your environment.
+_NOTE_ You will likely need an ALB Load Balancer to expoise your Vault Endpoint see the _Adding a Load Balancer via Ingress_ section for details
+
+```
+env:
+  awsS3BucketHtml: ""
+  awsS3BucketHtmlCDN: ""
+  htmlPageAwsS3Bucket: ""
+  htmlPageCDN: ""
+  gpcBaseUrl: ""
+  gptDataDbUser: ""
+```
+
+
+### Authenticate to AWS ECR
+Authenticate your Helm client to the Amazon ECR registry holding the AI Vault Helm Chart. 
+
 ```
 aws ecr get-login-password \
      --region eus-west-2 | helm registry login \
@@ -8,8 +29,11 @@ aws ecr get-login-password \
      --password-stdin <accountID>.dkr.ecr.eu-west-2.amazonaws.com
 ```
 
-## Installation
-1. Authenticate your Helm client to the Amazon ECR registry holding the Helm Chart. 
+### Install the Helm Chart with your newly created values file.
+Install the chart to your kubernetes cluster. 
+```
+helm install ai-vault-helm oci://aws_account_id.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-helm --version 0.1.0 --values ./customValues.yaml
+```
 
 ## Adding a Load Balancer via Ingress
 The following example describes setting an ingress for an AWS ALB LoadBalancer.
