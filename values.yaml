@@ -1,6 +1,6 @@
 aivaultReplicaCount: 1
 aivaultEntityReplicaCount: 1
-namespace: ai-vault-ns
+namespace: ai-vault-nshelm-test
 
 aivaultImage:
   repository: 475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault/production
