@@ -41,8 +41,8 @@ ingress:
               port:
                 number: 80
 ```
-
-## Testing Rendered Templates
+## Development
+### Testing Rendered Templates
 
 To view and test the output of your templates without installing it to your Kubernetes cluster run the following instructions:
 
@@ -58,3 +58,10 @@ To view and test the output of your templates without installing it to your Kube
 ```
 helm template ai-vault .
 ```
+
+
+### Packaging and Pushing Helm Chart
+1. Authenticate
+   ```
+aws ecr get-login-password --region eu-west-2 |  helm registry login --username AWS --password-stdin 475755457693.dkr.ecr.eu-west-2.amazonaws.com
+   ```
