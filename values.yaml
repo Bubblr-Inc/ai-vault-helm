@@ -30,25 +30,25 @@ env:
   gpcBaseUrl: ""
   gptDataDbUser: ""
 
-ingress:
-  enabled: true
-  className: "alb"
-  annotations: 
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/healthcheck-path: /v1/client/health
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/subnets: subnet-1234567,subnet-89011123,subnet-141516171 #replace with your own public subnets
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:123456789:certificate/50d7e14a-2345-4241-4567-d8d208f22b67 #replace with your own ACM Certificate ARN
-    alb.ingress.kubernetes.io/group.name: ai-vault
-    alb.ingress.kubernetes.io/load-balancer-name: ai-vault
-  hosts:
-    - host: ai-vault.prodsvc.com
-      paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: ai-vault-svc
-              port:
-                number: 80
+# ingress:
+#   enabled: true
+#   className: "alb"
+#   annotations: 
+#     kubernetes.io/ingress.class: alb
+#     alb.ingress.kubernetes.io/scheme: internet-facing
+#     alb.ingress.kubernetes.io/healthcheck-path: /v1/client/health
+#     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+#     alb.ingress.kubernetes.io/subnets: subnet-1234567,subnet-89011123,subnet-141516171 #replace with your own public subnets
+#     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:123456789:certificate/50d7e14a-2345-4241-4567-d8d208f22b67 #replace with your own ACM Certificate ARN
+#     alb.ingress.kubernetes.io/group.name: ai-vault
+#     alb.ingress.kubernetes.io/load-balancer-name: ai-vault
+#   hosts:
+#     - host: ai-vault.prodsvc.com
+#       paths:
+#         - path: /
+#           pathType: Prefix
+#           backend:
+#             service:
+#               name: ai-vault-svc
+#               port:
+#                 number: 80
