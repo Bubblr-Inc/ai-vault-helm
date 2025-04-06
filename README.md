@@ -56,7 +56,7 @@ To view and test the output of your templates without installing it to your Kube
    ```
 3. Run the helm debug command
 ```
-helm template ai-vault .
+helm template ai-vault-chart .
 ```
 
 
