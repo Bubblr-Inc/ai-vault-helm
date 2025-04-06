@@ -1,9 +1,15 @@
 # AI Vault Helm Chart.
 ## Summary
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
+```
+aws ecr get-login-password \
+     --region eus-west-2 | helm registry login \
+     --username AWS \
+     --password-stdin <accountID>.dkr.ecr.eu-west-2.amazonaws.com
+```
 
 ## Installation
-TODO
+1. Authenticate your Helm client to the Amazon ECR registry holding the Helm Chart. 
 
 ## Adding a Load Balancer via Ingress
 The following example describes setting an ingress for an AWS ALB LoadBalancer.
@@ -70,14 +76,14 @@ Make a note of the outputted package something like ai-vault-helm-0.1.0.tgz
 2. Authenticate to AWS ECR
 
    ```
-aws ecr get-login-password --region eu-west-2 |  helm registry login --username AWS --password-stdin 475755457693.dkr.ecr.eu-west-2.amazonaws.com
+aws ecr get-login-password --region eu-west-2 |  helm registry login --username AWS --password-stdin <accountID>.dkr.ecr.eu-west-2.amazonaws.com
    ```
 
 3. Push to AWS ECR HELM
 Replace the version with the package created in the Create helm package step
 
 ```
-helm push ai-vault-helm-<VERSION>.tgz oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/
+helm push ai-vault-helm-<VERSION>.tgz oci://<accountID>.dkr.ecr.eu-west-2.amazonaws.com/
 ```
 
 4. Verfiy the helm chart has been pushed correctly
