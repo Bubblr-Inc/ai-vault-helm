@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ai-vault-entity
-  namespace: {{ .Values.service.namespace }}
   labels:
     app: ai-vault-entity
 spec:

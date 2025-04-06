@@ -9,6 +9,7 @@ Create a file names `customValues.yaml` containing the following values. Note, y
 _NOTE_ You will likely need an ALB Load Balancer to expoise your Vault Endpoint see the _Adding a Load Balancer via Ingress_ section for details
 
 ```
+namespace: ai-vault-ns
 env:
   awsS3BucketHtml: ""
   awsS3BucketHtmlCDN: ""
@@ -32,7 +33,7 @@ aws ecr get-login-password \
 ### Install the Helm Chart with your newly created values file.
 Install the chart to your kubernetes cluster. 
 ```
-helm install ai-vault-helm oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-helm --version 0.1.0 --values ./customValues.yaml
+helm install ai-vault-helm oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-helm --version 0.1.0 --values ./customValues.yaml --create-namespace
 ```
 
 ## Adding a Load Balancer via Ingress
