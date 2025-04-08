@@ -29,6 +29,14 @@ env:
   htmlPageCDN: ""
   gpcBaseUrl: ""
   gptDataDbUser: ""
+  gptDataDbHost: ""
+  gptDataDbName: ""
+  nlpApiUrl: "http://ai-vault-entity-svc/entities"
+  mailFrom: ""
+  mailServer: ""
+  mailServerPort: ""
+  smtpLoginId: ""
+  aiSeekEnterPriseService: "https://aiseek-enterprise.production.prodsvc.com"
 
 ingress:
   enabled: false

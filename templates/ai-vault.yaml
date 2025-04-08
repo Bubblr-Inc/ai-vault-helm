@@ -27,10 +27,6 @@ spec:
           env:
           - name: PYTHONPATH
             value: "/ai-vault/"
-          - name: HTML_PAGE_AWS_S3_BUCKET
-            value: {{ .Values.htmlPageAwsS3Bucket }}
-          - name: HTML_PAGE_CON
-            value: {{ .Values.htmlPageCDN }}
           - name: GPC_BASE_URL
             value:  {{ .Values.env.gpcBaseUrl }}
           - name: GPT_DATA_DB_USER
@@ -39,8 +35,6 @@ spec:
             value: {{ .Values.env.gptDataDbHost }}
           - name: GPT_DATA_DB_NAME
             value: {{ .Values.env.gptDataDbName }}
-          - name: GPC_STREAM_URL
-            value:  {{ .Values.env.gpcStreamUrl }}
           - name: NLP_API_URL
             value: {{ .Values.env.nlpApiUrl }}
           - name: MAIL_FROM
@@ -51,8 +45,6 @@ spec:
             value: {{ .Values.env.mailServerPort }}
           - name: SMTP_LOGIN_ID
             value: {{ .Values.env.smtpLoginId }}
-          - name: AI_VAULT_LOGIN
-            value: {{ .Values.env.aiVaultLogin }}
           - name: AI_SEEK_ENTERPRISE_SERVICE
             value: {{ .Values.env.aiSeekEnterPriseService }}
           - name: GPT_DATA_DB_PASSWORD
