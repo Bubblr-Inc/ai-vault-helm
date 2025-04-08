@@ -11,12 +11,14 @@ _NOTE_ You will likely need an ALB Load Balancer to expose your Vault Endpoint s
 ```
 namespace: ai-vault-ns
 env:
-  awsS3BucketHtml: ""
-  awsS3BucketHtmlCDN: ""
-  htmlPageAwsS3Bucket: ""
-  htmlPageCDN: ""
   gpcBaseUrl: ""
   gptDataDbUser: ""
+  gptDataDbHost: ""
+  gptDataDbName: ""
+  mailFrom: " support@bubblr.com"
+  mailServer: "smtp.office.365.com"
+  mailServerPort: "587"
+  smtpLoginId: "support@bubblr.com"
 ```
 
 
