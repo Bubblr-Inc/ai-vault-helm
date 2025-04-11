@@ -15,4 +15,8 @@ There are at least two methods, via IAM keys and via SSO. Please follow this gui
 
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
-## Clone this repo and 
+Once you are authenticated move on to the next step.
+
+## Clone this repo 
+Clone this repository to your AWS authenticated workstation / laptop.
+https://github.com/Bubblr-Inc/ai-vault-infra-template
