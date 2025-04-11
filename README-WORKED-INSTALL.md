@@ -1,10 +1,4 @@
-# Requirements
-To successfully run and install an AI-Vault instance the following components are required:
 
-| Component       | Description |
-| --------------- | ------------- |
-| A load balancer with TLS | The URL endpoint that users will access AI Vault.     |
-| Content Cell  | Content Cell  |
 
 An external load balancer with a valid TLS/SSL Certificate
 A DNS name pointing to the external load balancer
