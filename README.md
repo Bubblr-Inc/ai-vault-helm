@@ -2,15 +2,23 @@
 ## Summary
 This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
 
-## Installation
-
-### Requirements
+## Requirements
 To successfully run and install an AI-Vault instance the following components are required:
 
 | Component       | Description |
 | --------------- | ------------- |
-| A load balancer with TLS | The URL endpoint that users will access AI Vault.     |
-| Content Cell  | Content Cell  |
+| Load balancer with TLS | The URL endpoint that users will access AI Vault.     |
+| DNS Entry | A DNS entry pointing to the loadbalancer enpoint  |
+| Kubernetes Cluster | Kubernetes cluster will run the AI Vault containers |
+| PostGres DataBase | A postgres database for the AI Vault containers to store data |
+
+## Build or prepare the infrastructure for the helm chart.
+This can be done a number of ways however, we generally use terraform and this guide will describe how to do this.
+[build](README-WORKED-INSTALL-TF.md)
+
+## Installation of Helm Chart
+
+If you have these already you may skip to the next section, otherwise continue to the 
 
 1. Prepare a values file for your installation.  
 Create a file names `customValues.yaml` containing the following values. Note, you will modify the environment variables to suit your environment.
