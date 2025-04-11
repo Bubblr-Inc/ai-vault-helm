@@ -1,10 +1,3 @@
-
-
-An external load balancer with a valid TLS/SSL Certificate
-A DNS name pointing to the external load balancer
-A PostGres DataBase.
-A Kubernetes Cluster
-
 # Installation Worked Example with Terraform
 
 The following example will start with an empty AWS account and will build AI Vault installation.
