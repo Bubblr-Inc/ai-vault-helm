@@ -18,7 +18,7 @@ next section.
 ## Build or prepare the infrastructure.
 AI-Vault needs to be run in on infrastructure such as an AWS VPC and EKS setup. 
 
-This can be done a number of ways however, we generally use terraform and [this guide will describe how to do this:](README-WORKED-INSTALL-TF.md)
+This can be done a number of ways however, we generally use terraform so to setup the infrastrucutre required by AI-Vault please use [this guide that describes how to do this](README-WORKED-INSTALL-TF.md)
 
 ## Installation of Helm Chart
 
