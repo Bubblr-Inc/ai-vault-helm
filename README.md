@@ -12,14 +12,13 @@ To successfully run and install an AI-Vault instance the following components ar
 | Kubernetes Cluster | Kubernetes cluster will run the AI Vault containers |
 | PostGres DataBase | A postgres database for the AI Vault containers to store data |
 
-If you have these already prepare you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
+If you have these already prepared you may skip to the _Installation of the Helm chart_ section, otherwise continue to the
 next section.
 
 ## Build or prepare the infrastructure.
-AI-Vault needs to be run in an infrastructure such as an AWS VPC and EKS setup. 
+AI-Vault needs to be run in on infrastructure such as an AWS VPC and EKS setup. 
 
-This can be done a number of ways however, we generally use terraform and this guide will describe how to do this 
-[build](README-WORKED-INSTALL-TF.md)
+This can be done a number of ways however, we generally use terraform and [this guide will describe how to do this:](README-WORKED-INSTALL-TF.md)
 
 ## Installation of Helm Chart
 
