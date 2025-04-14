@@ -11,11 +11,13 @@ The following example will start with an empty AWS account and will build AI Vau
 
 
 ## Install and authenticate the AWS cli 
-There are at least two methods, via IAM keys and via SSO. Please follow this guide to authenticate to your AWS account.
+We need the AWS cli tool to authenticate terraform so this needs to be installed on the laptop or workstation on your machine.
+
+AWS provides at least two methods to authenticate the CLI, via IAM keys and via SSO. Please follow this (aws provided) guide to authenticate to your AWS account:
 
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
-Once you are authenticated move on to the next step.
+Once you are authenticated move on to the next step below.
 
 ## Clone this repo 
 Clone this repository to your AWS authenticated workstation / laptop.
