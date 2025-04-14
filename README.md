@@ -4,7 +4,7 @@ This chart is used to install the AI vault and AI Vault Entity Extraction Deploy
 
 For installation advice please see the public documentation [here](https://github.com/Bubblr-Inc/ai-vault-aws-installation/blob/main/README.md)
 
-```
+
 ## Development
 ### Testing Rendered Templates
 
