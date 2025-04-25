@@ -46,7 +46,5 @@ helm push ai-vault-helm-0.1.0.tgz  oci://709825985650.dkr.ecr.us-east-1.amazonaw
 
 4. Verfiy the helm chart has been pushed correctly
 ```
-aws ecr describe-images \
-     --repository-name ai-vault-helm \
-     --region eu-west-2
+aws ecr describe-images --registry-id 709825985650 --repository-name ethical-web-ai/ai-vault --region us-east-1
 ```
