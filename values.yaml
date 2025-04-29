@@ -1,14 +1,14 @@
 aivaultReplicaCount: 1
 aivaultEntityReplicaCount: 1
-namespace: ai-vault-nshelm-test
+namespace: ai-vault-ns
 
 aivaultImage:
-  repository: 475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault/production
+  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-app
   pullPolicy: Always
   tag: ""
 
 aivaultEntityImage:
-  repository: 475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-entity/production
+  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-entity
   pullPolicy: IfNotPresent
   tag: ""
 
