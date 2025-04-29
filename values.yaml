@@ -3,12 +3,12 @@ aivaultEntityReplicaCount: 1
 namespace: ai-vault-ns
 
 aivaultImage:
-  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-app
+  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-app:0.1.0
   pullPolicy: Always
   tag: ""
 
 aivaultEntityImage:
-  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-entity
+  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-entity:0.1.0
   pullPolicy: IfNotPresent
   tag: ""
 
@@ -28,7 +28,7 @@ env:
   gptDataDbHost: ""
   gptDataDbName: ""
   nlpApiUrl: "http://ai-vault-entity-svc/entities"
-  mailFrom: " support@bubblr.com"
+  mailFrom: "support@bubblr.com"
   mailServer: "smtp.office.365.com"
   mailServerPort: "587"
   smtpLoginId: "support@bubblr.com"
