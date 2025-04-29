@@ -23,12 +23,13 @@ helm template ai-vault-helm .
 ```
 
 ### Packaging and Pushing Helm Chart
-1. Create helm package package
+1. Create helm package package.
+   Note, you will need to supply a version number for example 0.1.0, 0.1.1 or 1.0.0
 -  From the directory above the repo create 
 ```
-helm package ai-vault-helm
+helm package helm-charts-repository --version 0.2.0
 ```
-Make a note of the outputted package something like ai-vault-helm-0.1.0.tgz
+Make a note of the outputted package something like ai-vault-helm-0.2.0.tgz
 2. Authenticate to AWS ECR
 
    ```
