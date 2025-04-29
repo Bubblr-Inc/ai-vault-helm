@@ -14,15 +14,12 @@ To view and test the output of your templates without installing it to your Kube
    ```
    git clone https://github.com/Bubblr-Inc/ai-vault-helm.git
    ```
-2. Change directory into the the helm repo chart directory
-   ```
-   cd ai-vault-helm
-   ```
-3. Run the helm debug command
+2. Make a note of the version of the helm chart you are packaging up. For example 0.1.0
+   
+4. Run the helm debug command, making sure to supply the version of the helm chart you are creating e.g 0.1.0
 ```
-helm template ai-vault-helm .
+helm package helm-charts-repository --version 0.2.0
 ```
-
 
 ### Packaging and Pushing Helm Chart
 1. Create helm package package
