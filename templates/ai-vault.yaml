@@ -42,7 +42,7 @@ spec:
           - name: MAILSERVER
             value: {{ .Values.env.mailServer }}
           - name: MAILSERVER_PORT
-            value: {{ .Values.env.mailServerPort }}
+            value: "{{ .Values.env.mailServerPort }}"
           - name: SMTP_LOGIN_ID
             value: {{ .Values.env.smtpLoginId }}
           - name: AI_SEEK_ENTERPRISE_SERVICE
