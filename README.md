@@ -40,7 +40,7 @@ aws ecr get-login-password --region us-east-1 | helm registry login --username A
 Replace the version with the package created in the Create helm package step
 
 ```
-helm push ai-vault-helm-0.1.0.tgz oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai
+helm push ai-vault-helm-0.2.0.tgz oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai
 ```
 
 4. Verfiy the helm chart has been pushed correctly
