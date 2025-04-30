@@ -19,9 +19,12 @@ spec:
           imagePullPolicy: {{ .Values.aivaultImage.pullPolicy }}
           image: {{ .Values.aivaultImage.repository }}
           resources:
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
             requests:
-              memory: "512Mi"
-              cpu: "250m"
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
           ports:
             - containerPort: {{ .Values.service.port }}
           env:
