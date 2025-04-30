@@ -26,7 +26,7 @@ env:
   gpcBaseUrl: ""
   gptDataDbUser: ""
   gptDataDbHost: ""
-  gptDataDbName: ""
+  gptDataDbName: "ai-vault"
   nlpApiUrl: "http://ai-vault-entity-svc/entities"
   mailFrom: "support@bubblr.com"
   mailServer: "smtp.office.365.com"
