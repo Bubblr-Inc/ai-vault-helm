@@ -19,9 +19,12 @@ spec:
           image: {{ .Values.aivaultEntityImage.repository }}
           imagePullPolicy: {{ .Values.aivaultEntityImage.pullPolicy }}
           resources:
-          requests:
-              memory: "3184Mi"
-              cpu: "500m"
+            limits:
+              cpu: {{ .Values.entityResources.limits.cpu }}
+              memory: {{ .Values.entityResources.limits.memory }}
+            requests:
+              cpu: {{ .Values.entityResources.requests.cpu }}
+              memory: {{ .Values.entityResources.requests.memory }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
