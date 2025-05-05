@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: ai-vault-entity-svc
   labels:
-    application: ai-vault-entity-svc
+    app: ai-vault-entity-svc
 spec:
   ports:
     - port: 80

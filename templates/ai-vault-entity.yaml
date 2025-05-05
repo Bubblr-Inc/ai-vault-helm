@@ -18,13 +18,6 @@ spec:
         - name: ai-vault-entity
           image: {{ .Values.aivaultEntityImage.repository }}
           imagePullPolicy: {{ .Values.aivaultEntityImage.pullPolicy }}
-          resources:
-            limits:
-              cpu: {{ .Values.entityResources.limits.cpu }}
-              memory: {{ .Values.entityResources.limits.memory }}
-            requests:
-              cpu: {{ .Values.entityResources.requests.cpu }}
-              memory: {{ .Values.entityResources.requests.memory }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

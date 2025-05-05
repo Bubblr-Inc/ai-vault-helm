@@ -3,7 +3,7 @@ aivaultEntityReplicaCount: 1
 namespace: ai-vault-ns
 
 aivaultImage:
-  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-app:0.1.0
+  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-app:0.2.0
   pullPolicy: Always
   tag: ""
 
@@ -23,10 +23,10 @@ service:
 resources: {}
 
 env:
-  gpcBaseUrl: ""
-  gptDataDbUser: ""
-  gptDataDbHost: ""
-  gptDataDbName: "ai-vault"
+  gpcBaseUrl: "aivault.myorg.tld"
+  gptDataDbUser: "yourdbuser"
+  gptDataDbHost: "yourdbhost"
+  gptDataDbName: "ai_vault"
   nlpApiUrl: "http://ai-vault-entity-svc/entities"
   mailFrom: "support@bubblr.com"
   mailServer: "smtp.office.365.com"
@@ -35,24 +35,16 @@ env:
   aiSeekEnterPriseService: "https://aiseek-enterprise.production.prodsvc.com"
 
 ingress:
-  enabled: false
-  # className: "alb"
-  # annotations: 
-  #   kubernetes.io/ingress.class: alb
-  #   alb.ingress.kubernetes.io/scheme: internet-facing
-  #   alb.ingress.kubernetes.io/healthcheck-path: /v1/client/health
-  #   alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
-  #   alb.ingress.kubernetes.io/subnets: subnet-1234567,subnet-89011123,subnet-141516171 #replace with your own public subnets
-  #   alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:123456789:certificate/50d7e14a-2345-4241-4567-d8d208f22b67 #replace with your own ACM Certificate ARN
-  #   alb.ingress.kubernetes.io/group.name: ai-vault
-  #   alb.ingress.kubernetes.io/load-balancer-name: ai-vault
-  # hosts:
-  #   - host: ai-vault.prodsvc.com
-  #     paths:
-  #       - path: /
-  #         pathType: Prefix
-  #         backend:
-  #           service:
-  #             name: ai-vault-svc
-  #             port:
-  #               number: 80
+  host: aivault.ai-vault.io
+  className: "alb"
+  enabled: true
+  annotations: 
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/healthcheck-path: /v1/client/health
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/subnets: 	subnet-123456789,subnet-473857823784,subnet-68794513435  #Replace this with your own public subnets
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:245758476846852:certificate/35fg6w54e5b6e-645b-4442-b456-72c571240d7f #Replace this with your ACM certifcate ARN
+    alb.ingress.kubernetes.io/group.name: ai-vault
+    alb.ingress.kubernetes.io/load-balancer-name: ai-vault
+
