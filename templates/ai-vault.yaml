@@ -41,6 +41,8 @@ spec:
             value: "{{ .Values.env.mailServerPort }}"
           - name: SMTP_LOGIN_ID
             value: {{ .Values.env.smtpLoginId }}
+          - name: INITIAL_USER 
+            value: {{ .Values.env.initialUser }}
           - name: AI_SEEK_ENTERPRISE_SERVICE
             value: {{ .Values.env.aiSeekEnterPriseService }}
           - name: GPT_DATA_DB_PASSWORD

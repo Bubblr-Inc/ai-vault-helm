@@ -3,7 +3,7 @@ aivaultEntityReplicaCount: 1
 namespace: ai-vault-ns
 
 aivaultImage:
-  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-app:0.2.0
+  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-app:0.3.0
   pullPolicy: Always
   tag: ""
 
@@ -31,6 +31,7 @@ env:
   mailFrom: "support@bubblr.com"
   mailServer: "smtp.office.365.com"
   mailServerPort: "587"
+  initialUser: "support@bubblr.com"
   smtpLoginId: "support@bubblr.com"
   aiSeekEnterPriseService: "https://aiseek-enterprise.production.prodsvc.com"
 
