@@ -35,7 +35,12 @@ Make a note of the outputted package something like ai-vault-helm-0.2.0.tgz
 aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 475755457693.dkr.ecr.eu-west-2.amazonaws.com
 ```
 
-4. Verfiy the helm chart has been pushed correctly
+3. Push the helm package to the helm registry
+   ```
+   helm push ai-vault-helm-0.2.0.tgz oci://475755457693.dkr.ecr.us-east-1.amazonaws.com/ai-vault-helm
+   ```
+
+5. Verfiy the helm chart has been pushed correctly
 ```
-aws ecr describe-images --registry-id 709825985650 --repository-name ethical-web-ai/ai-vault --region us-east-1
+aws ecr describe-images --registry-id 709825985650 --repository-name ethical-web-ai/ai-vault --region eu-west-2
 ```
