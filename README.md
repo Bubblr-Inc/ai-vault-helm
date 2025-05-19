@@ -1,8 +1,6 @@
 # AI Vault Helm Chart.
 ## Summary
-This chart is used to install the AI vault and AI Vault Entity Extraction Deployments.
-
-For installation advice please see the public documentation [here](https://github.com/Bubblr-Inc/ai-vault-aws-installation/blob/main/README.md)
+This chart is used to install the AI vault Deployments
 
 ## Development
 ### Testing Rendered Templates
@@ -30,18 +28,8 @@ helm template ai-vault-helm .
 helm package  ai-vault-helm --version 0.2.0
 ```
 Make a note of the outputted package something like ai-vault-helm-0.2.0.tgz
-2. Authenticate to AWS ECR
 
-   ```
-aws ecr get-login-password --region us-east-1 | helm registry login --username AWS --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
-   ```
 
-3. Push to AWS ECR HELM
-Replace the version with the package created in the Create helm package step
-
-```
-helm push ai-vault-helm-0.2.0.tgz oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai
-```
 
 4. Verfiy the helm chart has been pushed correctly
 ```
