@@ -32,7 +32,6 @@ Make a note of the outputted package something like ai-vault-helm-0.2.0.tgz
 2. Authenticate to the AWS Account that contains the Helm ECR registry.
 
 ```
-aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 475755457693.dkr.ecr.eu-west-2.amazonaws.com
 aws ecr get-login-password --region eu-west-2 | helm registry login --username AWS --password-stdin 475755457693.dkr.ecr.eu-west-2.amazonaws.com
 ```
 
