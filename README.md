@@ -38,7 +38,7 @@ aws ecr get-login-password --region eu-west-2 | helm registry login --username A
 
 3. Push the helm package to the helm registry
    ```
-   helm push ai-vault-helm-0.2.0.tgz oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com/ai-vault-helm
+   helm push ai-vault-helm-0.2.0.tgz oci://475755457693.dkr.ecr.eu-west-2.amazonaws.com
    ```
 
 5. Verfiy the helm chart has been pushed correctly
