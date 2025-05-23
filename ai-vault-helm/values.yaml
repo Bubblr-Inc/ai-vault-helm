@@ -1,12 +1,10 @@
 aivaultReplicaCount: 1
 aivaultEntityReplicaCount: 1
-namespace: ai-vault-ns
 
 aivaultImage:
-  repository: 680460465896.dkr.ecr.eu-west-2.amazonaws.com/ai-vault/development
+  repository: ""
   pullPolicy: Always
   tag: ""
-
 
 imagePullSecrets: []
 nameOverride: ""
