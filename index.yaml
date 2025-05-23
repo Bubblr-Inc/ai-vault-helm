@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ai-vault-helm:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-05-23T15:41:20.283655012+01:00"
+    description: A Helm chart for Ai-Vault
+    digest: 73af6eb1152d5ff3995ece6769f2085db8084540a16e90a7a623155360defa25
+    name: ai-vault-helm
+    type: application
+    urls:
+    - ai-vault-helm-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-05-23T15:41:20.283062384+01:00"
