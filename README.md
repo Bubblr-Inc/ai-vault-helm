@@ -27,16 +27,11 @@ helm template ai-vault-helm .
 ```
 helm package  ai-vault-helm --version 0.2.0
 ```
-Make a note of the outputted package something like ai-vault-helm-0.2.0.tgz
 
-2. Authenticate to the AWS Account that contains the Helm ECR registry.
-
+2. Update the Repo Index file (index.yaml)
+   
 ```
-aws ecr get-login-password --region eu-west-2 | helm registry login --username AWS --password-stdin <ACCOUNT ID>.dkr.ecr.eu-west-2.amazonaws.com
+helm repo index .
 ```
 
-3. Push the helm package to the helm registry
-   ```
-   helm push ai-vault-helm-0.2.0.tgz oci://<ACCOUNT ID>.dkr.ecr.eu-west-2.amazonaws.com
-   ```
-
+3. Push the repo to the GitHub
