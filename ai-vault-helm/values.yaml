@@ -3,14 +3,10 @@ aivaultEntityReplicaCount: 1
 namespace: ai-vault-ns
 
 aivaultImage:
-  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-multi:0.4.0
+  repository: 680460465896.dkr.ecr.eu-west-2.amazonaws.com/ai-vault/development
   pullPolicy: Always
   tag: ""
 
-aivaultEntityImage:
-  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/ethical-web-ai/ai-vault-multi-entity:0.1.0
-  pullPolicy: IfNotPresent
-  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
